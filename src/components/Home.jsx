@@ -13,7 +13,7 @@ const Home = () => {
     return ( 
 <div className="homeContainer">
 <Navbar collapseOnSelect expand="lg">
-  <Link to="/"><Navbar.Brand>Crazy Weather</Navbar.Brand></Link>
+  <Link to="/"><Navbar.Brand className="navTitle">Crazy Weather</Navbar.Brand></Link>
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <Navbar.Collapse id="responsive-navbar-nav">
     <Nav className="mr-auto">

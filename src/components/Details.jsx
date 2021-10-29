@@ -6,6 +6,7 @@ import "./style/Details.css"
 const Details = () => {
   const dispatch = useDispatch();
   const data = useSelector((s) => s.data);
+  console.log(data)
   const celsius = parseInt(data.elements.main.temp - 273);
   const celsiusPerceved = parseInt(data.elements.main.feels_like - 273);
   const celsiusMax = parseInt(data.elements.main.temp_max - 273);
@@ -15,7 +16,7 @@ const Details = () => {
     
         <div className="homeContainer">
 <Navbar collapseOnSelect expand="lg">
-  <Link to="/"><Navbar.Brand>Crazy Weather</Navbar.Brand></Link>
+  <Link to="/"><Navbar.Brand className="navTitle">Crazy Weather</Navbar.Brand></Link>
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <Navbar.Collapse id="responsive-navbar-nav">
     <Nav className="mr-auto">
