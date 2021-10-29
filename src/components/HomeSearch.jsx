@@ -3,7 +3,7 @@ import { Col, Form } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux"
 import { fetchData } from "../store/actions";
 
-const Home = () => {
+const HomeSearch = () => {
     const [query, setQuery] = useState("")
     
     const dispatch = useDispatch()
@@ -13,7 +13,6 @@ const Home = () => {
     console.log("baseEndpoint", endPoint)
     const handleChange = (e)=>{
         setQuery(e.target.value)
-        console.log("baseEndpoint", query)
     }
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -22,7 +21,7 @@ const Home = () => {
     }
     return(
         <div>
-          <Col xs={10} className="mx-auto">
+          <Col xs={10} className="mx-auto my-5">
           <Form onSubmit={handleSubmit}>
             <Form.Control type="search" value={query} onChange={handleChange} placeholder="Search a City!" />
           </Form>
@@ -30,9 +29,11 @@ const Home = () => {
         <Col xs={10} className="mx-auto mb-5">
           {/* {data.elements.map((d) => ( */}
             <p>{data.elements.base}</p>
+            <p>{data.elements.main.humidity}</p>
+            <p>{data.elements.weather.description}</p>
           {/* // ))} */}
         </Col>
         </div>
     )
 }
-export default Home
+export default HomeSearch
