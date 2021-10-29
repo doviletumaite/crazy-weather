@@ -10,7 +10,6 @@ const HomeSearch = () => {
     const data = useSelector((s)=> s.data)
 
     const endPoint = process.env.REACT_APP_API_BASE_URL + query + "&appid=" + process.env.REACT_APP_API_KEY
-    console.log("baseEndpoint", endPoint)
     const handleChange = (e)=>{
         setQuery(e.target.value)
     }
@@ -27,11 +26,10 @@ const HomeSearch = () => {
           </Form>
         </Col>
         <Col xs={10} className="mx-auto mb-5">
-          {/* {data.elements.map((d) => ( */}
+    
             <p>{data.elements.base}</p>
-            <p>{data.elements.main.humidity}</p>
-            <p>{data.elements.weather.description}</p>
-          {/* // ))} */}
+            <p>{data.elements.weather[0].description}</p>
+            
         </Col>
         </div>
     )
