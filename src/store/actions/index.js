@@ -1,7 +1,7 @@
-export const fetchData = (url, query) => {
+export const fetchData = (endPoint) => {
     return async (dispatch, getState) => {
       try {
-        let resp = await fetch(url + query);
+        let resp = await fetch(endPoint);
         if (resp.ok) {
           const { data } = await resp.json();
           dispatch({
