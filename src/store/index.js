@@ -7,7 +7,7 @@ import storage from "redux-persist/lib/storage/session";
 export const initialState = {
   data: {
     elements: [],
-  }
+  },
 };
 
 const persistConfig = {
@@ -18,7 +18,7 @@ const persistConfig = {
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const mainReducer = combineReducers({
-  data: dataReducer
+  data: dataReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, mainReducer);
