@@ -4,7 +4,9 @@ export const fetchData = (endPoint) => {
         let resp = await fetch(endPoint);
         console.log("endpoint in action",endPoint )
         if (resp.ok) {
-          const data  = await resp.json();
+          const{ data } = await resp.json();
+          
+          console.log(data)
           dispatch({
             type: "FETCH_DATA",
             payload: data,

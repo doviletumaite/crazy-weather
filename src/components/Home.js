@@ -18,7 +18,7 @@ const Home = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
         dispatch(fetchData(endPoint))
-        console.log("data fetched", data)
+        console.log("data fetched", data.elements)
     }
     return(
         <div>
