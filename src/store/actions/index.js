@@ -1,7 +1,7 @@
 export const fetchData = (url, query) => {
     return async (dispatch, getState) => {
       try {
-        let resp = await fetch(url + query + '&limit=20');
+        let resp = await fetch(url + query);
         if (resp.ok) {
           const { data } = await resp.json();
           dispatch({
