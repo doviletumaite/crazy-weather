@@ -18,7 +18,7 @@ const Home = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
         dispatch(fetchData(endPoint))
-        console.log("data fetched", data.elements)
+        console.log("data fetched in home", data.elements)
     }
     return(
         <div>
@@ -28,9 +28,9 @@ const Home = () => {
           </Form>
         </Col>
         <Col xs={10} className="mx-auto mb-5">
-          {data.elements.map((d) => (
-            <p>{data.elements.weather.main}</p>
-          ))}
+          {/* {data.elements.map((d) => ( */}
+            <p>{data.elements.base}</p>
+          {/* // ))} */}
         </Col>
         </div>
     )
